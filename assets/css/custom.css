@@ -1,0 +1,150 @@
+/* ==================================
+   全局字体设置（中文优先）
+================================== */
+
+/* 正文字体（中文 + 英文） */
+html, body {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica", "Arial", sans-serif;
+    line-height: 1.75; /* 中文排版行距更舒适 */
+    font-weight: 400;
+    scroll-behavior: smooth; /* 丝滑滚动 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================
+   主体内容平铺 & 文章水平居中
+================================== */
+main.main-content {
+    width: 100%;
+    min-height: calc(100vh - 60px - 40px); /* 可按 header/footer 高度调整 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 水平居中文章 */
+    justify-content: flex-start; /* 顶部开始 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 文章或卡片最大宽度，居中显示 */
+.post, .card {
+    width: 100%;
+    max-width: 900px;    /* 内容最大宽度 */
+    margin: 0 0 20px 0;  /* 上下间距 */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.post:hover, .card:hover {
+    box-shadow: 0 0 20px rgba(38,139,210,0.4);
+    transform: translateY(-3px);
+}
+
+/* 文章标题字体（中文为主） */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Roboto", "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.2);
+    line-height: 1.3;
+    transition: all 0.3s ease;
+}
+
+/* 链接和按钮 */
+a, button {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover, button:hover {
+    color: #268BD2;
+    text-shadow: 0 0 10px #268BD2;
+}
+
+/* ==================================
+   代码字体
+================================== */
+code, pre {
+    font-family: "Fira Code", "Consolas", "Courier New", monospace;
+    font-size: 0.65em;
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.25em 0.45em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    line-height: 1.5;
+}
+
+/* ==================================
+   按钮效果
+================================== */
+.button, .btn {
+    background: linear-gradient(90deg, #268BD2, #6CA0DC);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    box-shadow: 0 0 5px rgba(38,139,210,0.6);
+    transition: all 0.3s ease;
+}
+.button:hover, .btn:hover {
+    box-shadow: 0 0 20px rgba(38,139,210,0.8);
+    transform: translateY(-2px);
+}
+
+/* ==================================
+   滑动条美化
+================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #268BD2;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #202020;
+}
+
+/* ==================================
+   发光文字效果
+================================== */
+.glow-text {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(38,139,210,0.6),
+                 0 0 10px rgba(38,139,210,0.5),
+                 0 0 20px rgba(38,139,210,0.4);
+    transition: all 0.3s ease;
+}
+.glow-text:hover {
+    text-shadow: 0 0 10px #268BD2,
+                 0 0 20px #268BD2,
+                 0 0 30px #268BD2;
+}
+
+/* ==================================
+   表格美化
+================================== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #1b1b1b;
+}
+table th, table td {
+    border: 1px solid #515151;
+    padding: 0.5em;
+}
+table tr:nth-child(even) {
+    background-color: #272727;
+}
+
+/* ==================================
+   图片悬停效果
+================================== */
+img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 6px;
+}
+img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
