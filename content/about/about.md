@@ -1,0 +1,32 @@
++++
+title = "关于笔者的信息"
++++
+
+暂时还没有什么介绍。 
+因为现在我也只是一位普通的大二学生。  
+浙江双一流大学，计算机在读，努力做些有意义的事情。   
+我喜欢两件事情："创造"和"体验"，希望可以...    
+我现在对未来的展望是成为一名C++工程师。  
+我的邮箱账号是: dongyanzhang0326@gmail.com  
+我的算法起手式是:(测试代码高亮)  
+``` cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define all(a) a.begin(), a.end()
+
+const int inf = 1e9 + 7;
+
+void solve() {
+
+}
+int main() {
+    cin.tie(0)->sync_with_stdio(0);
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
+```
