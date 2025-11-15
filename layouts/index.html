@@ -1,31 +1,20 @@
 {{ define "main" -}}
 <div class="posts">
+    <!-- 首页只显示一次标题 -->
+    <h2 class="post-title">文章列表</h2>
+
     {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
+
+    <!-- 循环文章，但不显示标题或内容，只保留 article 用于分页统计 -->
     {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
     <article class="post">
-        <!-- 显示文章标题 -->
-        <h2 class="post-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-
-        <!-- 可选：显示日期或作者信息 -->
+        <!-- 你可以保留日期或作者信息 -->
         {{ partial "post/info.html" . }}
-
-        <!-- 去掉首页的摘要和内容渲染 -->
-        {{/* 
-        {{ if or (.Site.Params.noSummary) (.Params.noSummary) }}
-            {{ .Content }}
-        {{ else }}
-            {{ .Summary }}
-            {{ if .Truncated }}
-                <div class="read-more-link">
-                    <a href="{{ .RelPermalink }}">Read More…</a>
-                </div>
-            {{ end }}
-        {{ end }}
-        */}}
+        <!-- 首页不渲染摘要或内容 -->
     </article>
     {{- end }}
 </div>
+
+<!-- 分页 -->
 {{ partial "pagination.html" . }}
 {{- end }}
