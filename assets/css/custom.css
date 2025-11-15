@@ -14,47 +14,6 @@ html, body {
 }
 
 /* ==================================
-   菜单栏样式
-================================== */
-
-/* 菜单栏整体容器 */
-nav, .navbar, .menu {
-    width: 100%;               /* 全宽显示 */
-    max-width: 1200px;         /* 可根据需要调整最大宽度 */
-    margin: 0 auto;            /* 居中 */
-    display: flex;
-    justify-content: space-between; /* 子菜单水平分布 */
-    align-items: center;
-    padding: 0 30px;           /* 左右内边距，增加菜单宽度感 */
-    box-sizing: border-box;
-    height: 70px;              /* 菜单栏高度 */
-    background-color: #101010; /* 可选背景色 */
-}
-
-/* 菜单列表水平排列 */
-nav ul, .menu ul, .navbar ul {
-    display: flex;
-    gap: 40px;                 /* 菜单项间距 */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* 菜单链接样式 */
-nav ul li a, .menu ul li a, .navbar ul li a {
-    color: #fff;
-    font-weight: 500;
-    padding: 12px 18px;        /* 点击区域更大 */
-    display: block;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover, .menu ul li a:hover, .navbar ul li a:hover {
-    color: #268BD2;
-    text-shadow: 0 0 8px #268BD2;
-}
-
-/* ==================================
    主体内容平铺 & 文章水平居中
 ================================== */
 main.main-content {
