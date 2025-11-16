@@ -6,7 +6,7 @@ hideToc: true
 tags: ["洛谷"]
 ---
 
-#### P3379 ST表|DFS|倍增算法|图论|LCA
+#### P3379 |ST表|DFS|倍增算法|图论|LCA|
 
 ``` cpp
 #include <bits/stdc++.h>
