@@ -1,10 +1,17 @@
 ---
-title: "牛客 Traker 2025-11-15"
+title: "牛客tracker记录"
 date: 2025-11-15
 draft: false
 hideToc: true
 tags: ["牛客竞赛"]
 ---
+
+#### 2025-11-16
+```
+
+```
+
+#### 2025-11-15
 
 ``` cpp
 

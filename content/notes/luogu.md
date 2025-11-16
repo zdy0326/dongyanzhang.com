@@ -1,5 +1,5 @@
 ---
-title: "洛谷 刷题 2025-11-16"
+title: "洛谷刷题记录"
 date: 2025-11-16
 draft: false
 hideToc: true
