@@ -56,11 +56,11 @@
 
 <!-- Open Graph image and Twitter Card metadata -->
 
-<title itemprop="name">张东岩 - 关于笔者的介绍</title>
-<meta property="og:title" content=张东岩&#32;-&#32;关于笔者的介绍 />
-<meta name="twitter:title" content=张东岩&#32;-&#32;关于笔者的介绍 />
-<meta itemprop="name" content=张东岩&#32;-&#32;关于笔者的介绍 />
-<meta name="application-name" content=张东岩&#32;-&#32;关于笔者的介绍 />
+<title itemprop="name">张东岩 - 洛谷刷题记录</title>
+<meta property="og:title" content=张东岩&#32;-&#32;洛谷刷题记录 />
+<meta name="twitter:title" content=张东岩&#32;-&#32;洛谷刷题记录 />
+<meta itemprop="name" content=张东岩&#32;-&#32;洛谷刷题记录 />
+<meta name="application-name" content=张东岩&#32;-&#32;洛谷刷题记录 />
 <meta property="og:site_name" content="" />
 
 
@@ -70,14 +70,14 @@
 <meta name="twitter:description" content="" />
 
 
-<base href="http://localhost:1313/about/about/" />
-<link rel="canonical" href="http://localhost:1313/about/about/" itemprop="url" />
-<meta name="url" content="http://localhost:1313/about/about/" />
-<meta name="twitter:url" content="http://localhost:1313/about/about/" />
-<meta property="og:url" content="http://localhost:1313/about/about/" />
+<base href="http://localhost:1313/notes/luogu/" />
+<link rel="canonical" href="http://localhost:1313/notes/luogu/" itemprop="url" />
+<meta name="url" content="http://localhost:1313/notes/luogu/" />
+<meta name="twitter:url" content="http://localhost:1313/notes/luogu/" />
+<meta property="og:url" content="http://localhost:1313/notes/luogu/" />
 
 
-<meta property="og:updated_time" content="2025-11-15T00:00:00Z" />
+<meta property="og:updated_time" content="2025-11-16T00:00:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='http://localhost:1313/sitemap.xml' />
@@ -363,15 +363,15 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="post">
   <div class="info">
   <h1 class="post-title">
-    <a href="http://localhost:1313/about/about/">关于笔者的介绍</a>
+    <a href="http://localhost:1313/notes/luogu/">洛谷刷题记录</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2025-11-15T00:00:00Z" class="post-date">
-        November 15, 2025
+      <time datetime=" 2025-11-16T00:00:00Z" class="post-date">
+        November 16, 2025
       </time>
       
       <span> - </span>
@@ -380,15 +380,15 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>1 min read</span>
+        <span>2 mins read</span>
       </span>
     </div>
 
     
     <ul class="tags">
       
-      <li class="tag-介绍">
-        <a href="http://localhost:1313/tags/%E4%BB%8B%E7%BB%8D">介绍</a>
+      <li class="tag-洛谷">
+        <a href="http://localhost:1313/tags/%E6%B4%9B%E8%B0%B7">洛谷</a>
       </li>
       
     </ul>
@@ -401,18 +401,79 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
-  <p>暂时还没有什么介绍。
-因为现在我也只是一位普通的大二学生。<br>
-浙江双一流大学，计算机在读，努力做些有意义的事情。<br>
-我喜欢两件事情：&ldquo;创造&quot;和&quot;体验&rdquo;，希望可以&hellip; <br>
-我现在对未来的展望是成为一名C++工程师。<br>
-我的邮箱账号是: <a href="mailto:dongyanzhang0326@gmail.com">dongyanzhang0326@gmail.com</a></p>
-
+  <h4 id="p3379-st表dfs倍增算法图论lca">P3379 ST表|DFS|倍增算法|图论|LCA</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ll long long
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define all(a) a.begin(), a.end()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, m, s;
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> dep(N);
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> e[N];
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> f(N, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> u, <span style="color:#66d9ef">int</span> fa) {
+</span></span><span style="display:flex;"><span>	f[u][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> fa;
+</span></span><span style="display:flex;"><span>	dep[u] <span style="color:#f92672">=</span> dep[fa] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> v : e[u]) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (v <span style="color:#f92672">!=</span> fa) {
+</span></span><span style="display:flex;"><span>			dfs(v, u);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> j) <span style="color:#f92672">&lt;=</span> n; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			f[i][j] <span style="color:#f92672">=</span> f[f[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lca</span>(<span style="color:#66d9ef">int</span> u, <span style="color:#66d9ef">int</span> v) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (dep[u] <span style="color:#f92672">&lt;</span> dep[v]) {
+</span></span><span style="display:flex;"><span>		swap(u, v);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (dep[f[u][i]] <span style="color:#f92672">&gt;=</span> dep[v]) {
+</span></span><span style="display:flex;"><span>			u <span style="color:#f92672">=</span> f[u][i];
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (u <span style="color:#f92672">==</span> v) <span style="color:#66d9ef">return</span> u;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (f[u][i] <span style="color:#f92672">!=</span> f[v][i]) {
+</span></span><span style="display:flex;"><span>			u <span style="color:#f92672">=</span> f[u][i];
+</span></span><span style="display:flex;"><span>			v <span style="color:#f92672">=</span> f[v][i];
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> f[u][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	cin.tie(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">-&gt;</span>sync_with_stdio(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m <span style="color:#f92672">&gt;&gt;</span> s;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> u, v;
+</span></span><span style="display:flex;"><span>		cin <span style="color:#f92672">&gt;&gt;</span> u <span style="color:#f92672">&gt;&gt;</span> v;
+</span></span><span style="display:flex;"><span>		e[u].push_back(v);
+</span></span><span style="display:flex;"><span>		e[v].push_back(u);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	dfs(s, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	init();
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> m; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> u, v;
+</span></span><span style="display:flex;"><span>		cin <span style="color:#f92672">&gt;&gt;</span> u <span style="color:#f92672">&gt;&gt;</span> v;
+</span></span><span style="display:flex;"><span>		cout <span style="color:#f92672">&lt;&lt;</span> lca(u, v) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
   
   <hr>
 <div class="footer">
     
 	    
+            <a class="previous-post" href="http://localhost:1313/notes/nktr/?ref=footer"><span style="font-weight:bold;">« Previous</span><br>牛客tracker记录</a>
+        
 	    
     
 </div>
