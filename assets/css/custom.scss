@@ -1,0 +1,81 @@
+/* ==========================
+   变量定义（可自定义）
+========================== */
+$font-article: "Mulish", "Noto Serif SC", -apple-system, PingFang SC, Microsoft YaHei, sans-serif;
+$font-code: "Ubuntu Mono", "Source Code Pro", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+$font-size-article: 18px;
+$line-height-article: 1.8;
+
+$font-size-code: 16px;
+$line-height-code: 1.5;
+
+$font-size-article-mobile: 16px;
+$line-height-article-mobile: 1.6;
+
+$font-size-code-mobile: 14px;
+
+/* ==========================
+   文章正文
+========================== */
+.article-content {
+  font-family: $font-article;
+  font-size: $font-size-article;
+  line-height: $line-height-article;
+  color: var(--highlight-foreground);
+
+  ::selection {
+    background: var(--highlight-selection);
+  }
+}
+
+/* ==========================
+   代码块
+========================== */
+.hljs, pre code {
+  font-family: $font-code;
+  font-size: $font-size-code;
+  line-height: $line-height-code;
+  color: var(--highlight-foreground);
+  background-color: var(--highlight-background);
+  padding: 12px;
+  border-radius: 6px;
+  display: block;
+  overflow-x: auto;
+
+  ::selection {
+    background: var(--highlight-selection);
+  }
+}
+
+/* 注释颜色 */
+.hljs-comment {
+  color: var(--highlight-comment);
+}
+
+/* ==========================
+   响应式（手机端）
+========================== */
+@media screen and (max-width: 768px) {
+  .article-content {
+    font-size: $font-size-article-mobile;
+    line-height: $line-height-article-mobile;
+  }
+
+  .hljs, pre code {
+    font-size: $font-size-code-mobile;
+  }
+}
+
+/* ==========================
+   深色模式
+========================== */
+@media (prefers-color-scheme: dark) {
+  .article-content {
+    color: var(--highlight-foreground);
+  }
+  .hljs, pre code {
+    background-color: var(--highlight-background);
+    color: var(--highlight-foreground);
+  }
+}
