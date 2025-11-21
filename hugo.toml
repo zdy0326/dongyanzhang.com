@@ -1,4 +1,4 @@
-baseURL = 'https://www.dongyanzhang.com/'
+baseURL = '/'
 title = ''
 theme = "reimu"
 languageCode = 'zh-CN'
