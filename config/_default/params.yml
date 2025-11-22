@@ -653,69 +653,67 @@ pangu:
 # experimental, may have a lot of bugs, open with caution!
 # A dynamic color generation tool based on Google's Material You design guidelines, capable of extracting primary colors from any image and generating complete light and dark color schemes.
 material_theme:
-  # more information: https://github.com/2061360308/material-theme
-  # notice: when you enable this feature, all the covers will be automatically added "crossorigin" attribute to support the dynamic color scheme
-  # so make sure your custom covers will not be blocked by the browser's CORS policy
-  enable: false # enable material_theme to generate dynamic color schemes based on the banner image
+  enable : false
+
 internal_theme:
   light:
-    # 蓝紫色梯度 (浅色模式) - 恢复到蓝调紫罗兰色系
-    --purple-0: "#4A69BD"   # 深蓝紫色
-    --purple-1: "#5D6DB3"
-    --purple-2: "#6E7FC8"
-    --purple-3: "#7F91DD"
-    --purple-4: "#90A3F2"
-    --purple-5: "#A1B5FF"
-    --purple-5-5: "#B2C7FF"
-    --purple-6: "#C3D9FF"   # 浅蓝紫色
-    --color-purple-6-shadow: "rgba(74,105,189,0.6)"
-    --color-purple-3-shadow: "rgba(127,145,221,0.3)"
+    # 紫色梯度 (浅色模式) - 调整为更纯粹的紫色
+    --red-0: "#6A1B9A"   
+    --red-1: "#7B1FA2"
+    --red-2: "#8E24AA"
+    --red-3: "#9C27B0"
+    --red-4: "#AB47BC"
+    --red-5: "#BA68C8"
+    --red-5-5: "#CE93D8"
+    --red-6: "#E1BEE7"
+    --color-red-6-shadow: "rgba(106, 27, 154, 0.6)"
+    --color-red-3-shadow: "rgba(156, 39, 176, 0.3)"
     
-    # 界面高亮与背景 - 恢复到蓝色基调的浅色
-    --highlight-nav: "#F0F4FF"
-    --highlight-scrollbar: "#C3D9FF"
-    --highlight-background: "#F9FAFF"
-    --highlight-selection: "#D0D9FF"
+    # 界面高亮与背景 - 调整为新的浅紫色基调
+    --highlight-nav: "#F3E5F5"
+    --highlight-scrollbar: "#E1BEE7"
+    --highlight-background: "#FAFAFA"
+    --highlight-selection: "#D1C4E9"
     
-    # 语法高亮（蓝紫色系）
+    # 语法高亮（统一为紫色系）
     --highlight-foreground: "#2B2B4F"
-    --highlight-comment: "#6D6DAA"
-    --highlight-red: "#4A69BD"
-    --highlight-orange: "#5D6DB3"
-    --highlight-yellow: "#6E7FC8"
-    --highlight-green: "#5C5CAE"
-    --highlight-aqua: "#4E50A5"
-    --highlight-blue: "#3B3F9E"
-    --highlight-purple: "#4A69BD"
-    --highlight-deletion: "#90A3F2"
-    --highlight-deletion-bg: "#E0E6FF"
-    --highlight-addition: "#5D6DB3"
-    --highlight-addition-bg: "#E6EDFF"
+    --highlight-comment: "#9C27B0"
+    --highlight-red: "#9C27B0"      # 使用主色调
+    --highlight-orange: "#AB47BC"
+    --highlight-yellow: "#D1C4E9"
+    --highlight-green: "#8E24AA"
+    --highlight-aqua: "#7B1FA2"
+    --highlight-blue: "#6A1B9A"
+    --highlight-purple: "#9C27B0"
+    --highlight-deletion: "#BA68C8"
+    --highlight-deletion-bg: "#F3E5F5"
+    --highlight-addition: "#7B1FA2"
+    --highlight-addition-bg: "#EDE7F6"
 
   dark:
-    # 蓝紫色梯度 (深色模式 - 半透明色)
-    --purple-4: "rgba(144,163,242,0.5)"
-    --purple-5: "rgba(161,181,255,0.15)"
-    --purple-5-5: "rgba(178,199,255,0.05)"
-    --purple-6: "rgba(195,217,255,0.2)"
+    # 紫色梯度 (深色模式 - 半透明色)
+    --red-4: "rgba(171, 71, 188, 0.5)"
+    --red-5: "rgba(186, 104, 200, 0.15)"
+    --red-5-5: "rgba(206, 147, 217, 0.05)"
+    --red-6: "rgba(225, 190, 231, 0.2)"
     
-    # 界面高亮与背景 - 恢复到深蓝紫色背景
-    --highlight-nav: "#1C1F3B"
-    --highlight-scrollbar: "#2A2E5C"
-    --highlight-background: "#161936"
-    --highlight-selection: "#3B3F7A55"
+    # 界面高亮与背景 - 调整为深紫色背景
+    --highlight-nav: "#1C1427"
+    --highlight-scrollbar: "#2A1F3B"
+    --highlight-background: "#120D1A"
+    --highlight-selection: "#3B2B4E55"
     
-    # 语法高亮（蓝紫色系）
-    --highlight-foreground: "#D8D8F0"
-    --highlight-comment: "#A8A8D0"
-    --highlight-red: "#4A69BD"
-    --highlight-orange: "#5D6DB3"
-    --highlight-yellow: "#6E7FC8"
-    --highlight-green: "#5C5CAE"
-    --highlight-aqua: "#4E50A5"
-    --highlight-blue: "#3B3F9E"
-    --highlight-purple: "#4A69BD"
-    --highlight-deletion: "#90A3F2"
-    --highlight-deletion-bg: "#1E1F4F"
-    --highlight-addition: "#5D6DB3"
-    --highlight-addition-bg: "#2A2E5C"
+    # 语法高亮（统一为紫色系）
+    --highlight-foreground: "#F0E6FF"
+    --highlight-comment: "#D1C4E9"
+    --highlight-red: "#AB47BC"
+    --highlight-orange: "#BA68C8"
+    --highlight-yellow: "#D1C4E9"
+    --highlight-green: "#8E24AA"
+    --highlight-aqua: "#7B1FA2"
+    --highlight-blue: "#6A1B9A"
+    --highlight-purple: "#9C27B0"
+    --highlight-deletion: "#BA68C8"
+    --highlight-deletion-bg: "#2A1F3B"
+    --highlight-addition: "#7B1FA2"
+    --highlight-addition-bg: "#3B2B4E"
