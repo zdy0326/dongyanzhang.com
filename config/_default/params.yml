@@ -659,21 +659,25 @@ material_theme:
   enable: false # enable material_theme to generate dynamic color schemes based on the banner image
 internal_theme:
   light:
-    --red-0: "#4A69BD"
-    --red-1: "#5D6DB3"
-    --red-2: "#6E7FC8"
-    --red-3: "#7F91DD"
-    --red-4: "#90A3F2"
-    --red-5: "#A1B5FF"
-    --red-5-5: "#B2C7FF"
-    --red-6: "#C3D9FF"
-    --color-red-6-shadow: "rgba(74,105,189,0.6)"
-    --color-red-3-shadow: "rgba(127,145,221,0.3)"
+    # 粉紫色梯度 (浅色模式)
+    --purple-0: "#4A69BD"
+    --purple-1: "#5D6DB3"
+    --purple-2: "#6E7FC8"
+    --purple-3: "#7F91DD"
+    --purple-4: "#90A3F2"
+    --purple-5: "#A1B5FF"
+    --purple-5-5: "#B2C7FF"
+    --purple-6: "#C3D9FF"
+    --color-purple-6-shadow: "rgba(74,105,189,0.6)"
+    --color-purple-3-shadow: "rgba(127,145,221,0.3)"
     
+    # 界面高亮与背景
     --highlight-nav: "#F0F4FF"
     --highlight-scrollbar: "#C3D9FF"
     --highlight-background: "#F9FAFF"
     --highlight-selection: "#D0D9FF"
+    
+    # 语法高亮
     --highlight-foreground: "#2B2B4F"
     --highlight-comment: "#6D6DAA"
     --highlight-red: "#4A69BD"
@@ -689,15 +693,19 @@ internal_theme:
     --highlight-addition-bg: "#E6EDFF"
 
   dark:
-    --red-4: "rgba(144,163,242,0.5)"
-    --red-5: "rgba(161,181,255,0.15)"
-    --red-5-5: "rgba(178,199,255,0.05)"
-    --red-6: "rgba(195,217,255,0.2)"
+    # 粉紫色梯度 (深色模式 - 主要使用半透明色)
+    --purple-4: "rgba(144,163,242,0.5)"
+    --purple-5: "rgba(161,181,255,0.15)"
+    --purple-5-5: "rgba(178,199,255,0.05)"
+    --purple-6: "rgba(195,217,255,0.2)"
     
+    # 界面高亮与背景
     --highlight-nav: "#1C1F3B"
     --highlight-scrollbar: "#2A2E5C"
     --highlight-background: "#161936"
     --highlight-selection: "#3B3F7A55"
+    
+    # 语法高亮
     --highlight-foreground: "#D8D8F0"
     --highlight-comment: "#A8A8D0"
     --highlight-red: "#4A69BD"
