@@ -1,4 +1,4 @@
-baseURL = 'https://www.dongyanzhang.com//'
+baseURL = 'https://dongyanzhang-com.vercel.app'
 title = ''
 theme = "reimu"
 languageCode = 'zh-CN'
